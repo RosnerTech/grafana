@@ -1,0 +1,2675 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 8531,
+    "graphTooltip": 0,
+    "id": 12,
+    "links": [],
+    "panels": [
+      {
+        "collapsed": false,
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 52,
+        "panels": [],
+        "targets": [
+          {
+            "datasource": {
+              "type": "alexanderzobnin-zabbix-datasource",
+              "uid": "ceblpio41mwowc"
+            },
+            "refId": "A"
+          }
+        ],
+        "title": "Zabbix Server",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 0,
+          "y": 1
+        },
+        "id": 72,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<img src=\"https://blog.rosnertech.com.br/wp-content/uploads/2025/02/logo_semfundo.png\">",
+          "mode": "html"
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "type": "alexanderzobnin-zabbix-datasource",
+              "uid": "ceblpio41mwowc"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "item": {
+              "filter": ""
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "2",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": {
+              "filter": ""
+            },
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "dark-red",
+                    "index": 1,
+                    "text": "DOWN"
+                  },
+                  "1": {
+                    "index": 0,
+                    "text": "UP"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 4,
+          "y": 1
+        },
+        "id": 64,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Zabbix agent ping"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Status",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 8,
+          "y": 1
+        },
+        "id": 80,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "System uptime"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Uptime",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 12,
+          "y": 1
+        },
+        "id": 81,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Total memory"
+            },
+            "itemTag": {
+              "filter": "component: memory"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Total memory",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 16,
+          "y": 1
+        },
+        "id": 82,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Memory utilization"
+            },
+            "itemTag": {
+              "filter": "component: memory"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Memory utilization",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 20,
+          "y": 1
+        },
+        "id": 83,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Free swap space in %"
+            },
+            "itemTag": {
+              "filter": "component: memory"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Free swap space in %",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 0,
+          "y": 4
+        },
+        "id": 84,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "CPU user time"
+            },
+            "itemTag": {
+              "filter": "component: cpu"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "CPU user time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 4,
+          "y": 4
+        },
+        "id": 85,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "CPU system time"
+            },
+            "itemTag": {
+              "filter": "component: cpu"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "CPU system time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 8,
+          "y": 4
+        },
+        "id": 86,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "CPU system time"
+            },
+            "itemTag": {
+              "filter": "component: cpu"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "CPU system time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 12,
+          "y": 4
+        },
+        "id": 87,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Number of processes"
+            },
+            "itemTag": {
+              "filter": "component: system"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Number of processes",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 16,
+          "y": 4
+        },
+        "id": 88,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Speed"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Interface eth0: Speed",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 20,
+          "y": 4
+        },
+        "id": 76,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Images size"
+            },
+            "itemTag": {
+              "filter": "component: images"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Images size",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-GrYlRd"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 20,
+              "gradientMode": "scheme",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 3,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 7
+        },
+        "id": 89,
+        "maxDataPoints": 100,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "table",
+            "placement": "right",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Bits received"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Bits sent"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Inbound packets discarded"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "C",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Inbound packets with errors"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "D",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Outbound packets discarded"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "E",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Zabbix servers"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "VPS - CHEWBACCA"
+            },
+            "itServiceFilter": "",
+            "item": {
+              "filter": "Interface eth0: Outbound packets with errors"
+            },
+            "itemTag": {
+              "filter": "component: network"
+            },
+            "itemids": "",
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": true,
+              "showDisabledItems": true,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": true
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "F",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "slaFilter": "",
+            "slaInterval": "none",
+            "slaProperty": "sla",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Interface eth0",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 24,
+          "x": 0,
+          "y": 15
+        },
+        "id": 79,
+        "options": {
+          "ackEventColor": "rgb(56, 219, 156)",
+          "ackField": false,
+          "ageField": true,
+          "allowDangerousHTML": false,
+          "customLastChangeFormat": false,
+          "descriptionAtNewLine": false,
+          "descriptionField": true,
+          "fontSize": "100%",
+          "highlightBackground": false,
+          "highlightNewEvents": false,
+          "highlightNewerThan": "1h",
+          "hostField": true,
+          "hostGroups": false,
+          "hostProxy": false,
+          "hostTechNameField": false,
+          "lastChangeFormat": "",
+          "layout": "table",
+          "markAckEvents": false,
+          "okEventColor": "rgb(56, 189, 113)",
+          "opdataField": false,
+          "pageSize": 10,
+          "problemTimeline": true,
+          "severityField": true,
+          "showTags": false,
+          "sortProblems": "lastchange",
+          "statusField": false,
+          "statusIcon": true,
+          "triggerSeverity": [
+            {
+              "color": "rgb(108, 108, 108)",
+              "priority": 0,
+              "severity": "Not classified",
+              "show": true
+            },
+            {
+              "color": "rgb(120, 158, 183)",
+              "priority": 1,
+              "severity": "Information",
+              "show": true
+            },
+            {
+              "color": "rgb(175, 180, 36)",
+              "priority": 2,
+              "severity": "Warning",
+              "show": true
+            },
+            {
+              "color": "rgb(255, 137, 30)",
+              "priority": 3,
+              "severity": "Average",
+              "show": true
+            },
+            {
+              "color": "rgb(255, 101, 72)",
+              "priority": 4,
+              "severity": "High",
+              "show": true
+            },
+            {
+              "color": "rgb(215, 0, 0)",
+              "priority": 5,
+              "severity": "Disaster",
+              "show": true
+            }
+          ]
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "type": "alexanderzobnin-zabbix-datasource",
+              "uid": "ceblpio41mwowc"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "item": {
+              "filter": ""
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "options": {
+              "acknowledged": 2,
+              "count": false,
+              "disableDataAlignment": false,
+              "hostProxy": false,
+              "hostsInMaintenance": false,
+              "limit": 1001,
+              "minSeverity": 0,
+              "severities": [],
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "sortProblems": "default",
+              "useTimeRange": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "5",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "showProblems": "problems",
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": {
+              "filter": ""
+            },
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Problems",
+        "type": "alexanderzobnin-zabbix-triggers-panel"
+      }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timeRangeUpdatedDuringEditOrView": false,
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "Zabbix Server",
+    "uid": "cecahrp5adslcc",
+    "version": 3,
+    "weekStart": ""
+  }

@@ -1,0 +1,2523 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "Performance metrics for Nginx",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 8531,
+    "graphTooltip": 0,
+    "id": 7,
+    "links": [],
+    "panels": [
+      {
+        "collapsed": false,
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 52,
+        "panels": [],
+        "targets": [
+          {
+            "datasource": {
+              "type": "alexanderzobnin-zabbix-datasource",
+              "uid": "ceblpio41mwowc"
+            },
+            "refId": "A"
+          }
+        ],
+        "title": "NGINX SERVICE STATUS",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 0,
+          "y": 1
+        },
+        "id": 72,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<img src=\"https://blog.rosnertech.com.br/wp-content/uploads/2025/02/logo_semfundo.png\">",
+          "mode": "html"
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "type": "alexanderzobnin-zabbix-datasource",
+              "uid": "ceblpio41mwowc"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "item": {
+              "filter": ""
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "2",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": {
+              "filter": ""
+            },
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "1": {
+                    "text": "Up"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "3": {
+                    "text": "Down"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "4": {
+                    "text": "Failed"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "0": {
+                    "text": "Other"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#299c46",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 3
+                },
+                {
+                  "color": "#d44a3a",
+                  "value": 4
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 4,
+          "y": 1
+        },
+        "id": 64,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Service status"
+            },
+            "itemTag": {
+              "filter": "component: health"
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Service status",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 8,
+          "y": 1
+        },
+        "id": 67,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Memory usage (vsize)"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Memory usage (vsize)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 12,
+          "y": 1
+        },
+        "id": 53,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Requests per second"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Requests per second",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 16,
+          "y": 1
+        },
+        "id": 65,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Requests total"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Requests per second",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 20,
+          "y": 1
+        },
+        "id": 63,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "CPU utilization"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "CPU utilization",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 0,
+          "y": 4
+        },
+        "id": 71,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Memory usage, %"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Memory usage, %",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 4,
+          "y": 4
+        },
+        "id": 50,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Service response time"
+            },
+            "itemTag": {
+              "filter": "component: application"
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "services_stats",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "status_time"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=",
+                "value": "nginx.service"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Service response time",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 9,
+          "y": 4
+        },
+        "id": 68,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Memory usage (rss)"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Memory usage (rss)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 13,
+          "y": 4
+        },
+        "id": 70,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Connections reading"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Connections reading",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 4,
+          "x": 17,
+          "y": 4
+        },
+        "id": 69,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.10",
+        "targets": [
+          {
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Connections writing"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "count"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^*/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "Connections writing",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": true,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 7
+        },
+        "id": 60,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "table",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 280
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "alias": "Request time 2**",
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Connections accepted per second"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request_time"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^2/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "alias": "Request time 3**",
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "${DS_INFLUXDB}"
+            },
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Connections dropped per second"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx_access_log",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "query": "SELECT first(\"request_time\") FROM \"nginx_access_log\" WHERE (\"host\" =~ /^$host$/ AND \"resp_code\" =~ /^3/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "queryType": "0",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "request_time"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "first"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              },
+              {
+                "condition": "AND",
+                "key": "resp_code",
+                "operator": "=~",
+                "value": "/^3/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "REQUEST TIME",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "ceblpio41mwowc"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": true,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 24,
+          "x": 0,
+          "y": 15
+        },
+        "id": 8,
+        "options": {
+          "legend": {
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "max"
+            ],
+            "displayMode": "table",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 280
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dsType": "influxdb",
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Requests total"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "accepts"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "accepts"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "active"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "active"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "handled"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "handled"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reading"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "reading"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "requests"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "requests"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "waiting"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "waiting"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "writing"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "writing"
+                  ],
+                  "type": "alias"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          },
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "countTriggersBy": "",
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dsType": "influxdb",
+            "evaltype": "0",
+            "functions": [],
+            "group": {
+              "filter": "Servidor_Web"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "hide": false,
+            "host": {
+              "filter": "Nginx"
+            },
+            "item": {
+              "filter": "Requests per second"
+            },
+            "itemTag": {
+              "filter": ""
+            },
+            "macro": {
+              "filter": ""
+            },
+            "measurement": "nginx",
+            "options": {
+              "count": false,
+              "disableDataAlignment": false,
+              "showDisabledItems": false,
+              "skipEmptyValues": false,
+              "useTrends": "default",
+              "useZabbixValueMapping": false
+            },
+            "orderByTime": "ASC",
+            "policy": "default",
+            "proxy": {
+              "filter": ""
+            },
+            "queryType": "0",
+            "refId": "B",
+            "resultFormat": "time_series",
+            "schema": 12,
+            "select": [
+              [
+                {
+                  "params": [
+                    "accepts"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "accepts"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "active"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "active"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "handled"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "handled"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reading"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "reading"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "requests"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "requests"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "waiting"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "waiting"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "writing"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "10s"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    "writing"
+                  ],
+                  "type": "alias"
+                }
+              ]
+            ],
+            "table": {
+              "skipEmptyValues": false
+            },
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              }
+            ],
+            "textFilter": "",
+            "trigger": {
+              "filter": ""
+            }
+          }
+        ],
+        "title": "NGINX STATUS METRICS",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timeRangeUpdatedDuringEditOrView": false,
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "NGINX METRICS",
+    "uid": "GqFjuAgmk",
+    "version": 4,
+    "weekStart": ""
+  }
