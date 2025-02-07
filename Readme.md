@@ -5,14 +5,6 @@ Bem-vindo ao repositório das **dashboards personalizadas** para **Zabbix** e **
 ## 📌 Sobre
 Recentemente, venho explorando novas formas de monitoramento no meu **homelab**, e decidi compartilhar com a comunidade as **dashboards que criei** para facilitar a visualização de métricas essenciais do **Zabbix Server** e dos **Containers Docker**.
 
-## 📸 Preview das Dashboards
-
-🔹 **Zabbix Server**
-![Zabbix Server Dashboard]
-
-🔹 **Containers Docker**
-![Docker Dashboard]
-
 ## 🚀 Como Utilizar
 
 ### 1️⃣ Requisitos
