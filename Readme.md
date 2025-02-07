@@ -8,10 +8,10 @@ Recentemente, venho explorando novas formas de monitoramento no meu **homelab**,
 ## 📸 Preview das Dashboards
 
 🔹 **Zabbix Server**
-![Zabbix Server Dashboard](https://via.placeholder.com/1200x600.png?text=Zabbix+Server+Dashboard)
+![Zabbix Server Dashboard]
 
 🔹 **Containers Docker**
-![Docker Dashboard](https://via.placeholder.com/1200x600.png?text=Docker+Dashboard)
+![Docker Dashboard]
 
 ## 🚀 Como Utilizar
 
